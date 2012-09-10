@@ -8,6 +8,7 @@ gem 'haml'
 gem 'sass'
 gem 'mongoid'
 gem 'sinatra-flash'
+gem 'ted_api'
 
 group :development do
   gem 'sinatra-reloader'

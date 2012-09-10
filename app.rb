@@ -5,6 +5,7 @@ require "sinatra/reloader" if development?
 require 'haml'
 require 'sass'
 require 'mongoid'
+require 'ted_api'
 
 set :environment, ENV['RACK_ENV']
 
@@ -19,6 +20,8 @@ module Fifty
   class App < Sinatra::Base
    
     get '/' do
+      @client = TedApi::Client.new(api_key: ENV['TED_API_KEY'])
+      puts @client.talks
       haml :index
     end
   
